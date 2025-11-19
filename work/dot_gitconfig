@@ -1,0 +1,6 @@
+[user]
+	email = barnou@prophesee.ai
+[url "https://barnou-psee:{{ (bitwarden "item" "prophesee_github_token").notes }}@github.com"]
+	insteadOf = https://github.com
+[safe]
+	directory = ~/work/

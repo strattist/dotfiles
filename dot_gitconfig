@@ -1,0 +1,28 @@
+[user]
+	name = Baptiste Arnou
+	email = barnou@prophesee.ai
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig
+[includeIf "gitdir:~/personal/"]
+	path = ~/personal/.gitconfig
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+	path = ~/personal/.gitconfig

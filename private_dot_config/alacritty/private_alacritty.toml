@@ -1,0 +1,2 @@
+[general]
+import = ["~/.config/alacritty/aura-theme.toml"]

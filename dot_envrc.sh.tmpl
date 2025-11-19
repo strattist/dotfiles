@@ -1,0 +1,64 @@
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/apps:$PATH"
+export PATH="/opt/helix-25.01.1-x86_64-linux:$PATH"
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+export PATH="$HOME/tools/bin:$PATH"
+export PATH="$HOME/tools/renode_portable:$PATH"
+export PATH="$HOME/tools/vcpkg:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+
+export QNN_SDK_ROOT="/opt/qcom/aistack/qairt/2.26.0.240828"
+
+export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH"
+
+export work="$HOME/work"
+
+alias mci="cd $work/metavision-computational-imaging"
+alias met="cd $work/metavision-eye-tracking"
+alias m="cd $work/metavision"
+
+. "$HOME/.cargo/env"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
+
+export BITWARDEN_EMAIL="baptiste.arnou@gmail.com"
+
+export GITHUB_TOKEN="{{ (bitwarden "item" "prophesee_github_token").notes }}"
+
+export JFROG_USERNAME="{{ (bitwarden "item" "jfrog").login.username }}"
+export JFROG_TOKEN="{{ (bitwarden "item" "jfrog").login.password }}"
+export JFROG_PASSWORD="$JFROG_TOKEN"
+
+export AWS_DEFAULT_PROFILE="oci"
+export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
+export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
+
+export MISTRAL_API_KEY="{{ (bitwarden "item" "mistral").login.password }}"
+
+export HARBOR_USERNAME="{{ (bitwarden "item" "harbor").login.username }}"
+export HARBOR_TOKEN="{{ (bitwarden "item" "harbor").login.password }}"
+
+export CONAN_HOME="$HOME/.conan2"
+
+function evtnoheader() {
+  sed '1,1000{/^%\ / d}' ${1}
+}
+
+export evtnoheader
+
+function evt64tohex() {
+   evtnoheader ${1} | hexdump -v -e '2/4 "%08X " "\n"' | awk '{print $2$1}'
+}
+
+export evt64tohex
+

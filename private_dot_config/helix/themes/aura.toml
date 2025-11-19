@@ -1,0 +1,76 @@
+"ui.background" = { fg = "#edecee", bg = "#15141b"}
+
+"ui.linenr" = { fg = "#a394f033"}
+"ui.linenr.selected" = { bg = "#2e2b38", modifiers = ["bold"]}
+
+"ui.statusline" = { fg = "#adacae", bg = "#121016"}
+
+"ui.selection" = { bg = "#3d375e7f"}
+"ui.selection.background" = { fg = "#3d375e7f"}
+
+"ui.cursor" = { fg = "#15141b", bg = "#f694ff"}
+"ui.cursor.match" = { fg = "#a277ff", modifiers = ["bold"] }
+
+"ui.text" = { fg = "#edecee"}
+"ui.text.focus" = { fg = "#edecee", bg = "#29263c" }
+"ui.text.inactive" = { fg = "#6d6d6d" }
+
+"ui.virtual.indent-guide" = "#2d2d2d"
+"ui.virtual.ruler" = { bg = "#2d2d2d" }
+"ui.virtual.whitespace" = { fg = "#2d2d2d" }
+"ui.virtual.inlay-hint" = { fg = "#cdccce", bg = "#2e2b38" }
+"ui.virtual.jump-label" = { fg = "#f694ff", modifiers = ["bold"] }
+
+"ui.highlight" = { bg = "#2e2b38", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "#cdccce", bg = "#121016"}
+"ui.menu.selected" = { fg = "#a277ff", bg = "#2e2b38"}
+
+"ui.popup" = { fg = "#cdccce", bg = "#121016"}
+
+"ui.window" = { fg = "#61ffca"}
+
+"diagnostic.error" = { underline = { color = "#ff6767", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#ffca85", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#82e2ff", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "#82e2ff", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+error = "#ff6767"
+warning = "#ffca85"
+info = "#82e2ff"
+hint = "#82e2ff"
+
+attributes = "#a277ff"
+type = "#82e2ff"
+
+constructor = "#82e2ff"
+
+constant = "#61ffca"
+string = "#61ffca"
+
+comment = {fg = "#6d6d6d", modifiers = [ "italic" ]}
+
+variable = "#edecee"
+"variable.builtin" = "#a277ff"
+"variable.other" = "#f694ff"
+
+"punctuation.delimeter" = "#f694ff"
+"punctuation.special" = "#edecee"
+
+keyword = "#a277ff"
+operator = "#a277ff"
+
+function = "#ffca85"
+tag = "#a277ff"
+
+markup = "#a277ff"
+"markup.heading" = "#ffca85"
+"markup.quote" = "#6d6d6d"
+"markup.list" = "#a277ff"
+"markup.link.url" = { fg = "#61ffca", modifiers = ["underlined"]}
+
+"diff.plus" = "#61ffca"
+"diff.delta" = "#ffca85"
+"diff.minus" = "#ff6767"

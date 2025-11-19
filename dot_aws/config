@@ -1,0 +1,14 @@
+[profile oci]
+region = eu-frankfurt-1
+endpoint_url = https://axzhdeir8b7i.compat.objectstorage.eu-frankfurt-1.oraclecloud.com
+s3 =
+  endpoint_url = https://axzhdeir8b7i.compat.objectstorage.eu-frankfurt-1.oraclecloud.com
+  max_concurrent_requests = 100
+  max_queue_size = 10000
+  multipart_threshold = 50MB
+  multipart_chunksize = 500MB
+s3api =
+  endpoint_url = https://axzhdeir8b7i.compat.objectstorage.eu-frankfurt-1.oraclecloud.com
+
+[plugins]
+endpoint = awscli_plugin_endpoint

@@ -1,0 +1,78 @@
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+[language-server.clangd]
+name = "clangd"
+command = "clangd-18"
+
+[language-server.pylsp]
+command = "pylsp"
+
+[language-server.pylsp.config]
+pylsp.plugins.pyls_mypy.enabled = true
+pylsp.plugins.pyls_mypy.live_mode = true
+
+[language-server.cmake-lsp]
+command = "cmake-language-server"
+auto-format = false
+
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
+
+[language-server.lsp-ai]
+command = "lsp-ai"
+
+[language-server.lsp-ai.config.memory]
+file_store = { }
+
+[language-server.lsp-ai.config.models.model1]
+type = "mistral_fim"
+fim_endpoint = "https://api.mistral.ai/v1/fim/completions"
+model = "codestral-latest"
+auth_token_env_var_name = "MISTRAL_API_KEY"
+
+[language-server.lsp-ai.config.completion]
+model = "model1"
+
+[language-server.lsp-ai.config.completion.parameters]
+max_tokens = 64
+max_context = 1024
+
+[[language-server.lsp-ai.config.chat]]
+trigger = "!C"
+action_display_name = "Chat"
+model = "model1"
+
+[language-server.lsp-ai.config.chat.parameters]
+max_context = 4096
+max_tokens = 1024
+system = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately"
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "lsp-ai"]
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+formatter = { command = "clang-format" } # , args = ["-i"] }
+language-servers = ["clangd", "lsp-ai"]
+file-types = ["cpp", "h", "hpp"]
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
+language-servers = ["ruff", "pylsp", "lsp-ai"]
+
+[[language]]
+name = "cmake"
+file-types = ["cmake", {glob = "CMake*.txt"}]
+language-servers = [ "cmake-lsp", "lsp-ai"]
+formatter = {command = "gersemi", args = ["--list-expansion favour-expansion"]}
+
+[[language]]
+name = "bash"
+
+[[language]]
+name = "json"
